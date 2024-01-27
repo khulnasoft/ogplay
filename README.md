@@ -1,5 +1,3 @@
-![Ogplay](.github/card.png)
-
 **Ogplay**: Enlightened library to convert HTML and CSS to SVG.
 
 ## Overview
