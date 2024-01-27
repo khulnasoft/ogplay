@@ -27,7 +27,7 @@ const list = new Set([
   'opacity',
   'filter',
 
-  // Special properties of Satori:
+  // Special properties of Ogplay:
   '_viewportWidth',
   '_viewportHeight',
   '_inheritedClipPathId',

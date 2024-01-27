@@ -5,7 +5,7 @@ import { toMatchImageSnapshot } from 'jest-image-snapshot'
 import { readFile } from 'node:fs/promises'
 import yoga from 'yoga-wasm-web/auto'
 
-import { init, type SatoriOptions } from '../src/index.js'
+import { init, type OgplayOptions } from '../src/index.js'
 
 export function initYogaWasm() {
   beforeAll(async () => {
@@ -21,7 +21,7 @@ export async function getDynamicAsset(text: string): Promise<Buffer> {
 export async function loadDynamicAsset(code: string, text: string) {
   return [
     {
-      name: `satori_${code}_fallback_${text}`,
+      name: `ogplay_${code}_fallback_${text}`,
       data: await getDynamicAsset(text),
       weight: 400,
       style: 'normal',
@@ -30,7 +30,7 @@ export async function loadDynamicAsset(code: string, text: string) {
   ]
 }
 
-export function initFonts(callback: (fonts: SatoriOptions['fonts']) => void) {
+export function initFonts(callback: (fonts: OgplayOptions['fonts']) => void) {
   beforeAll(async () => {
     const fontPath = join(process.cwd(), 'test', 'assets', 'Roboto-Regular.ttf')
     const fontData = await readFile(fontPath)

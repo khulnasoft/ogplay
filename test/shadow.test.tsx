@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Shadow', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('Shadow', () => {
 
   describe('box-shadow', () => {
     it('should render regular box shadow', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -25,7 +25,7 @@ describe('Shadow', () => {
     })
 
     it('should render box shadow with offset', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -41,7 +41,7 @@ describe('Shadow', () => {
     })
 
     it('should render box shadow with offset and spread', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -57,7 +57,7 @@ describe('Shadow', () => {
     })
 
     it('should render multiple box shadows', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -73,7 +73,7 @@ describe('Shadow', () => {
     })
 
     it('should support negative spread', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -90,7 +90,7 @@ describe('Shadow', () => {
     })
 
     it('should support box shadow for transparent elements', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -106,7 +106,7 @@ describe('Shadow', () => {
     })
 
     it('should support box shadow spread with transparency', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -122,7 +122,7 @@ describe('Shadow', () => {
     })
 
     it('should support inset box shadows', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -138,7 +138,7 @@ describe('Shadow', () => {
     })
 
     it('should be affected by container opacity', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -155,7 +155,7 @@ describe('Shadow', () => {
     })
 
     it('should work correct with zero border radius', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 50,
@@ -171,7 +171,7 @@ describe('Shadow', () => {
     })
 
     it('should show box shadow without specifying height', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -196,7 +196,7 @@ describe('Shadow', () => {
     })
 
     it('should support multiple text shadows', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             background: 'white',
@@ -214,7 +214,7 @@ describe('Shadow', () => {
     })
 
     it('should support text shadows if exist unexpected comma', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             background: 'white',

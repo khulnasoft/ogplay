@@ -1,14 +1,14 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Line Clamp', () => {
   let fonts
   initFonts((f) => (fonts = f))
 
   it('Should work correctly', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -75,7 +75,7 @@ describe('Line Clamp', () => {
   })
 
   it('Should replace custom block ellipsis with default ellipsis when too long', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -106,7 +106,7 @@ describe('Line Clamp', () => {
   })
 
   it('Should not work when display is not set to block', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -136,7 +136,7 @@ describe('Line Clamp', () => {
   })
 
   it('Should work correctly when `text-align: center`', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',

@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Gradient', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('Gradient', () => {
 
   describe('linear-gradient', () => {
     it('should support linear-gradient', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             backgroundColor: 'white',
@@ -28,7 +28,7 @@ describe('Gradient', () => {
     })
 
     it('should support repeating linear-gradient', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             backgroundColor: 'white',
@@ -48,7 +48,7 @@ describe('Gradient', () => {
     })
 
     it('should support linear-gradient with transparency', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             backgroundColor: 'green',
@@ -67,7 +67,7 @@ describe('Gradient', () => {
     })
 
     it('should support linear-gradient with omitted orientation', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             backgroundColor: 'green',
@@ -86,7 +86,7 @@ describe('Gradient', () => {
     })
 
     it('should support using background instead of backgroundImage', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             background: 'linear-gradient(to right, red, black)',
@@ -104,7 +104,7 @@ describe('Gradient', () => {
     })
 
     it('should support multiple direction keywords', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             background: 'linear-gradient(to right top, red, blue)',
@@ -124,7 +124,7 @@ describe('Gradient', () => {
 
   describe('radial-gradient', () => {
     it('should support radial-gradient', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             backgroundColor: 'white',
@@ -144,7 +144,7 @@ describe('Gradient', () => {
     })
 
     it('should support radial-gradient with unspecified <ending-shape>', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             height: '100%',
@@ -174,7 +174,7 @@ describe('Gradient', () => {
     })
 
     it('should support default value', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             backgroundColor: 'white',
@@ -201,7 +201,7 @@ describe('Gradient', () => {
           'radial-gradient(circle at 2vw 25px,blue, red)',
           'radial-gradient(circle at 1vh 50%,blue, red)',
         ].map((backgroundImage) =>
-          satori(
+          ogplay(
             <div
               style={{
                 backgroundColor: 'white',
@@ -231,7 +231,7 @@ describe('Gradient', () => {
           'radial-gradient(farthest-side at left bottom, red, yellow 50px, green)',
           'radial-gradient(closest-side at 20px 30px, red, yellow, green)',
         ].map((backgroundImage) =>
-          satori(
+          ogplay(
             <div
               style={{
                 backgroundColor: 'white',
@@ -261,7 +261,7 @@ describe('Gradient', () => {
           'radial-gradient(20% 20% at top left, yellow, blue)',
           'radial-gradient(30px at top left, yellow, blue)',
         ].map((backgroundImage) =>
-          satori(
+          ogplay(
             <div
               style={{
                 backgroundColor: 'white',
@@ -287,7 +287,7 @@ describe('Gradient', () => {
   })
 
   it('should support advanced usage', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           backgroundColor: 'yellow',
@@ -309,7 +309,7 @@ describe('Gradient', () => {
   })
 
   it('should resolve gradient layers in the correct order', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           backgroundColor: 'yellow',
@@ -331,7 +331,7 @@ describe('Gradient', () => {
   })
 
   it('should render gradient patterns in the correct object space', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -359,7 +359,7 @@ describe('Gradient', () => {
   })
 
   it('should calculate the gradient angle and length correctly', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -379,7 +379,7 @@ describe('Gradient', () => {
   })
 
   it('should calculate the gradient angle and length correctly with offset', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -401,7 +401,7 @@ describe('Gradient', () => {
   })
 
   it('should be able to render grid backgrounds', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',

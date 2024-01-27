@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 // TODO: no support for 'text-decoration' or 'outline'
 
@@ -15,7 +15,7 @@ describe('Color Models', () => {
 
   describe('backgroundColor and color', () => {
     it('should support hexadecimal', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -37,7 +37,7 @@ describe('Color Models', () => {
     })
 
     it('should support hexadecimal with transparency', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -59,7 +59,7 @@ describe('Color Models', () => {
     })
 
     it('should support rgb', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -81,7 +81,7 @@ describe('Color Models', () => {
     })
 
     it('should support rgba', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -103,7 +103,7 @@ describe('Color Models', () => {
     })
 
     it('should support hsl', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -125,7 +125,7 @@ describe('Color Models', () => {
     })
 
     it('should support hsla', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -147,7 +147,7 @@ describe('Color Models', () => {
     })
 
     it('should support predefined color names', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -169,7 +169,7 @@ describe('Color Models', () => {
     })
 
     it('should support inherit color', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -194,7 +194,7 @@ describe('Color Models', () => {
     })
 
     it('should support currentcolor when inherit', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -219,7 +219,7 @@ describe('Color Models', () => {
     })
 
     it('should support currentcolor when background', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -251,7 +251,7 @@ describe('Color Models', () => {
     })
 
     it('should support currentcolor when border', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -280,7 +280,7 @@ describe('Color Models', () => {
   })
 
   it('should support css4 syntax color in hsl', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           fontSize: 16,
@@ -309,7 +309,7 @@ describe('Color Models', () => {
   })
 
   it('should support css4 syntax color in hsl if inherited', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           fontSize: 16,

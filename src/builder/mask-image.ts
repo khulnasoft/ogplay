@@ -2,7 +2,7 @@ import { buildXMLString } from '../utils.js'
 import buildBackgroundImage from './background-image.js'
 import type { MaskProperty } from '../parser/mask.js'
 
-const genMaskImageId = (id: string) => `satori_mi-${id}`
+const genMaskImageId = (id: string) => `ogplay_mi-${id}`
 
 export default async function buildMaskImage(
   v: {

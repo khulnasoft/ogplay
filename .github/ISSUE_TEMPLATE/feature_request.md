@@ -1,13 +1,13 @@
 ---
 name: Feature request
-about: Request a new feature for Satori
+about: Request a new feature for Ogplay
 ---
 
 # Feature Request
 
 ## Description
 
-What do you want to add to Satori, and why?
+What do you want to add to Ogplay, and why?
 
 ## Additional Context
 

@@ -1,4 +1,4 @@
-import Satori, { init } from './dist/index.wasm.js'
+import Ogplay, { init } from './dist/index.wasm.js'
 
-export default Satori
+export default Ogplay
 export { init }

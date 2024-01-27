@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import type { TwConfig } from 'twrnc'
-import type { SatoriNode } from './layout.js'
+import type { OgplayNode } from './layout.js'
 
 import getYoga, { init } from './yoga/index.js'
 import layout from './layout.js'
@@ -15,7 +15,7 @@ import { cache } from './handler/image.js'
 // We don't need to initialize the opentype instances every time.
 const fontCache = new WeakMap()
 
-export type SatoriOptions = (
+export type OgplayOptions = (
   | {
       width: number
       height: number
@@ -36,20 +36,20 @@ export type SatoriOptions = (
     segment: string
   ) => Promise<string | Array<FontOptions>>
   tailwindConfig?: TwConfig
-  onNodeDetected?: (node: SatoriNode) => void
+  onNodeDetected?: (node: OgplayNode) => void
 }
-export type { SatoriNode }
+export type { OgplayNode }
 
 export { init }
 
-export default async function satori(
+export default async function ogplay(
   element: ReactNode,
-  options: SatoriOptions
+  options: OgplayOptions
 ): Promise<string> {
   const Yoga = await getYoga()
   if (!Yoga || !Yoga.Node) {
     throw new Error(
-      'Satori is not initialized: expect `yoga` to be loaded, got ' + Yoga
+      'Ogplay is not initialized: expect `yoga` to be loaded, got ' + Yoga
     )
   }
   options.fonts = options.fonts || []

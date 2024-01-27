@@ -105,7 +105,7 @@ export default function buildText(
       style: style.filter ? `filter:${style.filter}` : undefined,
     }
     return [
-      (filter ? `${filter}<g filter="url(#satori_s-${id})">` : '') +
+      (filter ? `${filter}<g filter="url(#ogplay_s-${id})">` : '') +
         buildXMLString('image', {
           ...shapeProps,
           opacity: opacity !== 1 ? opacity : undefined,
@@ -134,7 +134,7 @@ export default function buildText(
     style: style.filter ? `filter:${style.filter}` : undefined,
   }
   return [
-    (filter ? `${filter}<g filter="url(#satori_s-${id})">` : '') +
+    (filter ? `${filter}<g filter="url(#ogplay_s-${id})">` : '') +
       buildXMLString(
         'text',
         {

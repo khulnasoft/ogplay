@@ -1,14 +1,14 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('text-wrap', () => {
   let fonts
   initFonts((f) => (fonts = f))
 
   it('should wrap normally with text-wrap: wrap', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: 100,
@@ -32,7 +32,7 @@ describe('text-wrap', () => {
   })
 
   it('should wrap balancedly with text-wrap: balance', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: 100,

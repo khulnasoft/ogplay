@@ -5,5 +5,5 @@ export type {
 } from './font.js'
 export type { Locale } from './language.js'
 
-export * from './satori.js'
-export { default } from './satori.js'
+export * from './ogplay.js'
+export { default } from './ogplay.js'

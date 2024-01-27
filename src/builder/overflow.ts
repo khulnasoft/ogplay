@@ -44,7 +44,7 @@ export default function overflow(
   if (style.overflow !== 'hidden' && !src) {
     overflowClipPath = ''
   } else {
-    const _id = clipPath ? `satori_ocp-${id}` : genClipPathId(id)
+    const _id = clipPath ? `ogplay_ocp-${id}` : genClipPathId(id)
 
     overflowClipPath = buildXMLString(
       'clipPath',
@@ -64,7 +64,7 @@ export default function overflow(
 
   const contentMask = mask(
     {
-      id: `satori_om-${id}`,
+      id: `ogplay_om-${id}`,
       left,
       top,
       width,

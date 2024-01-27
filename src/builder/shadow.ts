@@ -74,7 +74,7 @@ export function buildDropShadow(
       ...(shadowCount > 1
         ? {
             in: 'SourceGraphic',
-            result: `satori_s-${id}-result-${i}`,
+            result: `ogplay_s-${id}-result-${i}`,
           }
         : {}),
     })
@@ -83,7 +83,7 @@ export function buildDropShadow(
       // Merge needs to be in reverse order.
       merge =
         buildXMLString('feMergeNode', {
-          in: `satori_s-${id}-result-${i}`,
+          in: `ogplay_s-${id}-result-${i}`,
         }) + merge
     }
   }
@@ -91,7 +91,7 @@ export function buildDropShadow(
   return buildXMLString(
     'filter',
     {
-      id: `satori_s-${id}`,
+      id: `ogplay_s-${id}`,
       x: ((left / width) * 100 * SCALE).toFixed(2) + '%',
       y: ((top / height) * 100 * SCALE).toFixed(2) + '%',
       width: (((right - left) / width) * 100 * SCALE).toFixed(2) + '%',
@@ -153,8 +153,8 @@ export function boxShadow(
       height
     )
 
-    const sid = `satori_s-${id}-${i}`
-    const maskId = `satori_ms-${id}-${i}`
+    const sid = `ogplay_s-${id}-${i}`
+    const maskId = `ogplay_ms-${id}-${i}`
     const shapeWithSpread = shadowStyle.spreadRadius
       ? shape.replace(
           'stroke-width="0"',

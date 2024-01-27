@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Emojis', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('Emojis', () => {
 
   it('should detect emojis correctly', async () => {
     const emojis = []
-    await satori(<div>⛷👨‍👩‍👧❤️‍🔥🏳️‍🌈㊗️🛠👶🏾</div>, {
+    await ogplay(<div>⛷👨‍👩‍👧❤️‍🔥🏳️‍🌈㊗️🛠👶🏾</div>, {
       width: 100,
       height: 100,
       fonts,
@@ -33,9 +33,9 @@ describe('Emojis', () => {
     `)
   })
 
-  // https://github.com/vercel/satori/issues/302
+  // https://github.com/khulnasoft/ogplay/issues/302
   it('should render emojis correctly', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           backgroundColor: '#fff',
@@ -60,7 +60,7 @@ describe('Emojis', () => {
   })
 
   it('should render emojis correctly with `word-break: break-all`', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           backgroundColor: '#fff',
@@ -86,7 +86,7 @@ describe('Emojis', () => {
   })
 
   it('should render emojis correctly with alphabetic emoji', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',

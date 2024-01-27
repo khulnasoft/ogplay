@@ -44,7 +44,7 @@ export function getBorderClipPath(
   // existing property to make it behave like CSS border. So here we
   // 2x the border width and introduce another clip path to clip the
   // overflowed part.
-  const rectClipId = `satori_bc-${id}`
+  const rectClipId = `ogplay_bc-${id}`
   const defs = buildXMLString(
     'clipPath',
     {

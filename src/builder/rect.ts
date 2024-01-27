@@ -137,7 +137,7 @@ export default async function rect(
 
   const currentClipPath =
     backgroundClip === 'text'
-      ? `url(#satori_bct-${id})`
+      ? `url(#ogplay_bct-${id})`
       : clipPathId
       ? `url(#${clipPathId})`
       : style.clipPath
@@ -216,8 +216,8 @@ export default async function rect(
       preserveAspectRatio,
       transform: matrix ? matrix : undefined,
       style: cssFilter ? `filter:${cssFilter}` : undefined,
-      'clip-path': `url(#satori_cp-${id})`,
-      mask: miId ? `url(#${miId})` : `url(#satori_om-${id})`,
+      'clip-path': `url(#ogplay_cp-${id})`,
+      mask: miId ? `url(#${miId})` : `url(#ogplay_om-${id})`,
     })
   }
 

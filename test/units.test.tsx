@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 import { splitEffects } from '../src/utils.js'
 
 describe('Units', () => {
@@ -9,7 +9,7 @@ describe('Units', () => {
   initFonts((f) => (fonts = f))
 
   it('should support %', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '30%',
@@ -27,7 +27,7 @@ describe('Units', () => {
   })
 
   it('should support em', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '2em',
@@ -46,7 +46,7 @@ describe('Units', () => {
   })
 
   it('should support vh and vw', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '10vw',
@@ -64,7 +64,7 @@ describe('Units', () => {
   })
 
   it('should support rem', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '2rem',
@@ -83,7 +83,7 @@ describe('Units', () => {
   })
 
   it('should support px and numbers', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '20px',
@@ -102,7 +102,7 @@ describe('Units', () => {
   })
 
   it('should support rgb syntaxs', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div style={{ display: 'flex' }}>
         <div
           style={{

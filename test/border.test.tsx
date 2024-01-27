@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Border', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('Border', () => {
 
   describe('border', () => {
     it('should support the shorthand', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             border: '1px solid',
@@ -29,7 +29,7 @@ describe('Border', () => {
 
   describe('border-color', () => {
     it('should render black border by default', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{ border: '1px solid', width: '50%', height: '50%' }}
         ></div>,
@@ -39,7 +39,7 @@ describe('Border', () => {
     })
 
     it('should fallback border color to the current color', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             border: '1px solid',
@@ -54,7 +54,7 @@ describe('Border', () => {
     })
 
     it('should support specifying `borderColor`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             border: '1px',
@@ -69,7 +69,7 @@ describe('Border', () => {
     })
 
     it('should support overriding borderColor', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             border: '1px blue',
@@ -86,7 +86,7 @@ describe('Border', () => {
 
   describe('border-width', () => {
     it('should render border inside the shape', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{ border: '5px solid black', width: 50, height: 50 }}
         ></div>,
@@ -98,7 +98,7 @@ describe('Border', () => {
 
   describe('border-style', () => {
     it('should support dashed border', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{ border: '5px dashed black', width: 50, height: 50 }}
         ></div>,
@@ -110,7 +110,7 @@ describe('Border', () => {
 
   describe('border-radius', () => {
     it('should support the shorthand', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             borderRadius: '10px',
@@ -129,7 +129,7 @@ describe('Border', () => {
     })
 
     it('should support radius for a certain corner', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             borderTopRightRadius: '50px',
@@ -150,7 +150,7 @@ describe('Border', () => {
     })
 
     it('should not exceed the length of the short side', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             borderRadius: 100,
@@ -169,7 +169,7 @@ describe('Border', () => {
     })
 
     it('should support percentage border radius', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             borderRadius: '100% 10px',
@@ -188,7 +188,7 @@ describe('Border', () => {
     })
 
     it('should support vw vh em and rem units', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -216,7 +216,7 @@ describe('Border', () => {
     })
 
     it('should support slash and 2-value corner', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -247,7 +247,7 @@ describe('Border', () => {
 
   describe('directional', () => {
     it('should support directional border', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             borderTop: '1px solid red',
@@ -264,7 +264,7 @@ describe('Border', () => {
     })
 
     it('should support non-complete border', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             borderTop: '10px solid red',
@@ -279,7 +279,7 @@ describe('Border', () => {
     })
 
     it('should support advanced border with radius', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             borderRadius: '10px 20%',

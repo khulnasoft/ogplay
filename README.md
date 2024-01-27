@@ -1,22 +1,22 @@
-![Satori](.github/card.png)
+![Ogplay](.github/card.png)
 
-**Satori**: Enlightened library to convert HTML and CSS to SVG.
+**Ogplay**: Enlightened library to convert HTML and CSS to SVG.
 
 > **Note**
 >
-> To use Satori in your project to generate PNG images like Open Graph images and social cards, check out our [announcement](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images) and [Vercel’s Open Graph Image Generation →](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation)
+> To use Ogplay in your project to generate PNG images like Open Graph images and social cards, check out our [announcement](https://khulnasoft.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images) and [Vercel’s Open Graph Image Generation →](https://khulnasoft.com/docs/concepts/functions/edge-functions/og-image-generation)
 >
-> To use it in Next.js, take a look at the [Next.js Open Graph Image Generation template →](https://vercel.com/templates/next.js/og-image-generation)
+> To use it in Next.js, take a look at the [Next.js Open Graph Image Generation template →](https://khulnasoft.com/templates/next.js/og-image-generation)
 
 ## Overview
 
-Satori supports the JSX syntax, which makes it very straightforward to use. Here’s an overview of the basic usage:
+Ogplay supports the JSX syntax, which makes it very straightforward to use. Here’s an overview of the basic usage:
 
 ```jsx
 // api.jsx
-import satori from 'satori'
+import ogplay from 'ogplay'
 
-const svg = await satori(
+const svg = await ogplay(
   <div style={{ color: 'black' }}>hello, world</div>,
   {
     width: 600,
@@ -34,7 +34,7 @@ const svg = await satori(
 )
 ```
 
-Satori will render the element into a 600×400 SVG, and return the SVG string:
+Ogplay will render the element into a 600×400 SVG, and return the SVG string:
 
 ```js
 '<svg ...><path d="..." fill="black"></path></svg>'
@@ -48,7 +48,7 @@ Under the hood, it handles layout calculation, font, typography and more, to gen
 
 ### JSX
 
-Satori only accepts JSX elements that are pure and stateless. You can use a subset of HTML
+Ogplay only accepts JSX elements that are pure and stateless. You can use a subset of HTML
 elements (see section below), or custom React components, but React APIs such as `useState`, `useEffect`, `dangerouslySetInnerHTML` are not supported.
 
 #### Use without JSX
@@ -56,7 +56,7 @@ elements (see section below), or custom React components, but React APIs such as
 If you don't have JSX transpiler enabled, you can simply pass [React-elements-like objects](https://reactjs.org/docs/introducing-jsx.html) that have `type`, `props.children` and `props.style` (and other properties too) directly:
 
 ```js
-await satori(
+await ogplay(
   {
     type: 'div',
     props: {
@@ -70,20 +70,20 @@ await satori(
 
 ### HTML Elements
 
-Satori supports a limited subset of HTML and CSS features, due to its special use cases. In general, only these static and visible elements and properties that are implemented.
+Ogplay supports a limited subset of HTML and CSS features, due to its special use cases. In general, only these static and visible elements and properties that are implemented.
 
 For example, the `<input>` HTML element, the `cursor` CSS property are not in consideration. And you can't use `<style>` tags or external resources via `<link>` or `<script>`.
 
-Also, Satori does not guarantee that the SVG will 100% match the browser-rendered HTML output since Satori implements its own layout engine based on the [SVG 1.1 spec](https://www.w3.org/TR/SVG11).
+Also, Ogplay does not guarantee that the SVG will 100% match the browser-rendered HTML output since Ogplay implements its own layout engine based on the [SVG 1.1 spec](https://www.w3.org/TR/SVG11).
 
-You can find the list of supported HTML elements and their preset styles [here](https://github.com/vercel/satori/blob/main/src/handler/presets.ts).
+You can find the list of supported HTML elements and their preset styles [here](https://github.com/khulnasoft/ogplay/blob/main/src/handler/presets.ts).
 
 #### Images
 
 You can use `<img>` to embed images. However, `width`, and `height` attributes are recommended to set:
 
 ```jsx
-await satori(
+await ogplay(
   <img src="https://picsum.photos/200/300" width={200} height={300} />,
   options
 )
@@ -91,10 +91,10 @@ await satori(
 
 When using `background-image`, the image will be stretched to fit the element by default if you don't specify the size.
 
-If you want to render the generated SVG to another image format such as PNG, it would be better to use base64 encoded image data (or buffer) directly as `props.src` so no extra I/O is needed in Satori:
+If you want to render the generated SVG to another image format such as PNG, it would be better to use base64 encoded image data (or buffer) directly as `props.src` so no extra I/O is needed in Ogplay:
 
 ```jsx
-await satori(
+await ogplay(
   <img src="data:image/png;base64,..." width={200} height={300} />,
   // Or src={arrayBuffer}, src={buffer}
   options
@@ -103,7 +103,7 @@ await satori(
 
 ### CSS
 
-Satori uses the same Flexbox [layout engine](https://yogalayout.com) as React Native, and it’s **not** a complete CSS implementation. However, it supports a subset of the spec that covers most common CSS features:
+Ogplay uses the same Flexbox [layout engine](https://yogalayout.com) as React Native, and it’s **not** a complete CSS implementation. However, it supports a subset of the spec that covers most common CSS features:
 
 <table>
 <thead>
@@ -290,10 +290,10 @@ RTL languages are not supported either.
 
 #### Fonts
 
-Satori currently supports three font formats: TTF, OTF and WOFF. Note that WOFF2 is not supported at the moment. You must specify the font if any text is rendered with Satori, and pass the font data as ArrayBuffer (web) or Buffer (Node.js):
+Ogplay currently supports three font formats: TTF, OTF and WOFF. Note that WOFF2 is not supported at the moment. You must specify the font if any text is rendered with Ogplay, and pass the font data as ArrayBuffer (web) or Buffer (Node.js):
 
 ```js
-await satori(
+await ogplay(
   <div style={{ fontFamily: 'Inter' }}>Hello</div>,
   {
     width: 600,
@@ -316,14 +316,14 @@ await satori(
 )
 ```
 
-Multiple fonts can be passed to Satori and used in `fontFamily`.
+Multiple fonts can be passed to Ogplay and used in `fontFamily`.
 
 #### Emojis
 
 To render custom images for specific graphemes, you can use `graphemeImages` option to map the grapheme to an image source:
 
 ```jsx
-await satori(
+await ogplay(
   <div>Next.js is 🤯!</div>,
   {
     ...,
@@ -338,10 +338,10 @@ The image will be resized to the current font-size (both width and height) as a 
 
 #### Locales
 
-Satori supports rendering text in different locales. You can specify the supported locales via the `lang` attribute:
+Ogplay supports rendering text in different locales. You can specify the supported locales via the `lang` attribute:
 
 ```jsx
-await satori(
+await ogplay(
   <div lang="ja-JP">骨</div>
 )
 ```
@@ -352,10 +352,10 @@ Supported locales are exported as the `Locale` enum type.
 
 #### Dynamically Load Emojis and Fonts
 
-Satori supports dynamically loading emoji images (grapheme pictures) and fonts. The `loadAdditionalAsset` function will be called when a text segment is rendered but missing the image or font:
+Ogplay supports dynamically loading emoji images (grapheme pictures) and fonts. The `loadAdditionalAsset` function will be called when a text segment is rendered but missing the image or font:
 
 ```jsx
-await satori(
+await ogplay(
   <div>👋 你好</div>,
   {
     // `code` will be the detected language code, `emoji` if it's an Emoji, or `unknown` if not able to tell.
@@ -375,18 +375,18 @@ await satori(
 
 ### Runtime and WASM
 
-Satori can be used in browser, Node.js (>= 16), and Web Workers.
+Ogplay can be used in browser, Node.js (>= 16), and Web Workers.
 
-By default, Satori depends on asm.js for the browser runtime, and native module in Node.js. However, you can optionally load WASM instead by importing `satori/wasm` and provide the initialized WASM module instance of Yoga to Satori:
+By default, Ogplay depends on asm.js for the browser runtime, and native module in Node.js. However, you can optionally load WASM instead by importing `ogplay/wasm` and provide the initialized WASM module instance of Yoga to Ogplay:
 
 ```js
-import satori, { init } from 'satori/wasm'
+import ogplay, { init } from 'ogplay/wasm'
 import initYoga from 'yoga-wasm-web'
 
 const yoga = initYoga(await fetch('/yoga.wasm').then(res => res.arrayBuffer()))
 init(yoga)
 
-await satori(...)
+await ogplay(...)
 ```
 
 When running in the browser or in the Node.js environment, WASM files need to be hosted and fetched before initializing. asm.js can be bundled together with the lib. In this case WASM should be faster.
@@ -399,12 +399,12 @@ Overall there are many trade-offs between each choice, and it's better to pick t
 
 ### Font Embedding
 
-By default, Satori renders the text as `<path>` in SVG, instead of `<text>`. That means it embeds the font path data as inlined information, so succeeding processes (e.g. render the SVG on another platform) don’t need to deal with font files anymore.
+By default, Ogplay renders the text as `<path>` in SVG, instead of `<text>`. That means it embeds the font path data as inlined information, so succeeding processes (e.g. render the SVG on another platform) don’t need to deal with font files anymore.
 
-You can turn off this behavior by setting `embedFont` to `false`, and Satori will use `<text>` instead:
+You can turn off this behavior by setting `embedFont` to `false`, and Ogplay will use `<text>` instead:
 
 ```jsx
-const svg = await satori(
+const svg = await ogplay(
   <div style={{ color: 'black' }}>hello, world</div>,
   {
     ...,
@@ -418,7 +418,7 @@ const svg = await satori(
 To draw the bounding box for debugging, you can pass `debug: true` as an option:
 
 ```jsx
-const svg = await satori(
+const svg = await ogplay(
   <div style={{ color: 'black' }}>hello, world</div>,
   {
     ...,
@@ -431,16 +431,16 @@ const svg = await satori(
 
 ## Contribute
 
-You can use the [Vercel OG Image Playground](https://og-playground.vercel.app/) to test and report bugs of Satori.  Please follow our [contribution guidelines](/CONTRIBUTING.md) before opening a Pull Request.
+You can use the [Vercel OG Image Playground](https://og-playground.vercel.app/) to test and report bugs of Ogplay.  Please follow our [contribution guidelines](/CONTRIBUTING.md) before opening a Pull Request.
 
 <br/>
 
 ## Author
 
-- Shu Ding ([@shuding_](https://twitter.com/shuding_))
+- Md Sulaiman ([@khulnasoft](https://twitter.com/khulnasoft))
 
 ---
 
-<a aria-label="Vercel logo" href="https://vercel.com">
+<a aria-label="Vercel logo" href="https://khulnasoft.com">
   <img src="https://badgen.net/badge/icon/Made%20by%20Vercel?icon=zeit&label&color=black&labelColor=black">
 </a>

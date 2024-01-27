@@ -2,7 +2,7 @@ import { buildXMLString } from '../utils.js'
 import { createShapeParser } from '../parser/shape.js'
 
 export function genClipPathId(id: string) {
-  return `satori_cp-${id}`
+  return `ogplay_cp-${id}`
 }
 export function genClipPath(id: string) {
   return `url(#${genClipPathId(id)})`

@@ -1,12 +1,12 @@
 import React from 'react'
-import satori from 'satori'
+import ogplay from 'ogplay'
 import { LiveProvider, LiveContext, withLive } from 'react-live'
 import { useEffect, useState, useRef, useContext, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import Editor, { useMonaco } from '@monaco-editor/react'
 import toast, { Toaster } from 'react-hot-toast'
 import copy from 'copy-to-clipboard'
-import packageJson from 'satori/package.json'
+import packageJson from 'ogplay/package.json'
 import * as fflate from 'fflate'
 import { Base64 } from 'js-base64'
 import PDFDocument from 'pdfkit/js/pdfkit.standalone'
@@ -148,7 +148,7 @@ const loadDynamicAsset = withCache(
             offset += fontDataLength
 
             fonts.push({
-              name: `satori_${languageCode}_fallback_${text}`,
+              name: `ogplay_${languageCode}_fallback_${text}`,
               data: fontData,
               weight: 400,
               style: 'normal',
@@ -410,7 +410,7 @@ function LiveEditor({ id }: { id: string }) {
 const currentOptions = {}
 let overrideOptions: any = null
 
-const LiveSatori = withLive(function ({
+const LiveOgplay = withLive(function ({
   live,
 }: {
   live?: { element: React.ComponentType; error: string }
@@ -552,7 +552,7 @@ const LiveSatori = withLive(function ({
         ).now()
         if (renderType !== 'html') {
           try {
-            _result = await satori(live.element.prototype.render(), {
+            _result = await ogplay(live.element.prototype.render(), {
               ...options,
               embedFont: fontEmbed,
               width,
@@ -892,9 +892,9 @@ const LiveSatori = withLive(function ({
               </a>
             </div>
             <div className='control'>
-              <label>Satori Version</label>
+              <label>Ogplay Version</label>
               <a
-                href='https://github.com/vercel/satori'
+                href='https://github.com/khulnasoft/ogplay'
                 target='_blank'
                 rel='noreferrer'
               >
@@ -1032,7 +1032,7 @@ export default function Playground() {
   const previewPanel = (
     <Panel>
       <PanelGroup direction='vertical'>
-        <LiveSatori />
+        <LiveOgplay />
       </PanelGroup>
     </Panel>
   )
@@ -1066,7 +1066,7 @@ export default function Playground() {
         </h1>
         <ul>
           <li>
-            <a href='https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation'>
+            <a href='https://khulnasoft.com/docs/concepts/functions/edge-functions/og-image-generation'>
               Docs
             </a>
           </li>
@@ -1074,7 +1074,7 @@ export default function Playground() {
             <a href='https://nextjs.org/discord'>Discord</a>
           </li>
           <li>
-            <a href='https://github.com/vercel/satori'>GitHub</a>
+            <a href='https://github.com/khulnasoft/ogplay'>GitHub</a>
           </li>
         </ul>
       </nav>

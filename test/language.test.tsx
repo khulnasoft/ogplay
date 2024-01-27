@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 import { detectLanguageCode } from '../src/language.js'
 
@@ -119,7 +119,7 @@ describe('detectLanguageCode', () => {
   })
 
   it('should not crash when rendering Arabic letters', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100%',

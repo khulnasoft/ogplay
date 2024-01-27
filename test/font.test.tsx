@@ -2,7 +2,7 @@ import { join } from 'node:path'
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 import { readFile } from 'node:fs/promises'
 
 describe('Font', () => {
@@ -11,7 +11,7 @@ describe('Font', () => {
 
   it('should error when no font is specified', async () => {
     try {
-      await satori(<div>hello</div>, {
+      await ogplay(<div>hello</div>, {
         width: 100,
         height: 100,
         fonts: [],
@@ -24,7 +24,7 @@ describe('Font', () => {
   })
 
   it('should not error when no font is specified and no text rendered', async () => {
-    const svg = await satori(<div></div>, {
+    const svg = await ogplay(<div></div>, {
       width: 100,
       height: 100,
       fonts: [],
@@ -47,7 +47,7 @@ describe('Font', () => {
       weight: 400,
       style: 'normal',
     }
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           display: 'flex',
@@ -72,7 +72,7 @@ describe('Font', () => {
 
   describe('font-size', () => {
     it('should allow font-size to be 0', async () => {
-      const svg = await satori(<div style={{ fontSize: 0 }}>hi</div>, {
+      const svg = await ogplay(<div style={{ fontSize: 0 }}>hi</div>, {
         width: 100,
         height: 100,
         fonts,
@@ -94,7 +94,7 @@ describe('Font', () => {
       name: fontName,
       data: fontData,
     }
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           fontSize: '3rem',
@@ -115,7 +115,7 @@ describe('Font', () => {
   it('should handle font-size correctly for element like heading', async () => {
     const svgs = await Promise.all(
       [20, '0.8em', '1.2rem'].map((fontSize) =>
-        satori(
+        ogplay(
           <div
             style={{
               height: '100%',
@@ -148,7 +148,7 @@ describe('Font', () => {
   })
 
   it('should handle escape html when embedFont is false', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           fontSize: '16px',

@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('transform', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('transform', () => {
 
   describe('translate', () => {
     it('should translate shape', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 10,
@@ -28,7 +28,7 @@ describe('transform', () => {
     })
 
     it('should translate shape in x-axis', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 10,
@@ -47,7 +47,7 @@ describe('transform', () => {
     })
 
     it('should translate shape in y-axis', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 10,
@@ -66,7 +66,7 @@ describe('transform', () => {
     })
 
     it('should support %', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             display: 'flex',
@@ -97,7 +97,7 @@ describe('transform', () => {
 
   describe('rotate', () => {
     it('should rotate shape', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 10,
@@ -118,7 +118,7 @@ describe('transform', () => {
 
   describe('scale', () => {
     it('should scale shape', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 10,
@@ -137,7 +137,7 @@ describe('transform', () => {
     })
 
     it('should scale shape in two directions', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 10,
@@ -158,7 +158,7 @@ describe('transform', () => {
 
   describe('multiple transforms', () => {
     it('should support translate rotate and scale', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 10,

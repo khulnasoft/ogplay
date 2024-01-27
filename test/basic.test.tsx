@@ -1,19 +1,19 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Basic', () => {
   let fonts
   initFonts((f) => (fonts = f))
 
   it('should render empty div', async () => {
-    const svg = await satori(<div></div>, { width: 100, height: 100, fonts })
+    const svg = await ogplay(<div></div>, { width: 100, height: 100, fonts })
     expect(toImage(svg, 100)).toMatchImageSnapshot()
   })
 
   it('should render basic div with text', async () => {
-    const svg = await satori(<div>Hello</div>, {
+    const svg = await ogplay(<div>Hello</div>, {
       width: 100,
       height: 100,
       fonts,
@@ -22,7 +22,7 @@ describe('Basic', () => {
   })
 
   it('should render basic div with background color', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{ backgroundColor: 'red', width: '100%', height: '100%' }}
       ></div>,
@@ -36,7 +36,7 @@ describe('Basic', () => {
   })
 
   it('should render basic div with text and background color', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div style={{ backgroundColor: 'red', width: '100%', height: '100%' }}>
         Hello
       </div>,
@@ -50,7 +50,7 @@ describe('Basic', () => {
   })
 
   it('should support skipping embedded fonts', async () => {
-    const svg = await satori(<div>Hello</div>, {
+    const svg = await ogplay(<div>Hello</div>, {
       width: 100,
       height: 100,
       fonts,
@@ -60,7 +60,7 @@ describe('Basic', () => {
   })
 
   it('should support hex colors', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{ backgroundColor: '#ff0', width: '100%', height: '100%' }}
       ></div>,
@@ -74,7 +74,7 @@ describe('Basic', () => {
   })
 
   it('should support array in JSX children', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           backgroundColor: '#ff0',
@@ -99,7 +99,7 @@ describe('Basic', () => {
   })
 
   it('should combine textNodes correctly', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           display: 'flex',

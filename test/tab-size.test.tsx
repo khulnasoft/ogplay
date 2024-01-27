@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('tab-size', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('tab-size', () => {
 
   it("Tab renders as space when white-space is not 'pre' or 'pre-wrap'", async () => {
     const tab = String.fromCodePoint(0x09)
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -49,7 +49,7 @@ describe('tab-size', () => {
 
   it("Tabs render correctly with default tab-size of 8 when white-space is 'pre'", async () => {
     const tab = String.fromCodePoint(0x09)
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -90,7 +90,7 @@ describe('tab-size', () => {
 
   it('Tabs render correctly when tab-size is a number', async () => {
     const tab = String.fromCodePoint(0x09)
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -132,7 +132,7 @@ describe('tab-size', () => {
 
   it('Tabs render correctly when tab-size is a string', async () => {
     const tab = String.fromCodePoint(0x09)
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -174,7 +174,7 @@ describe('tab-size', () => {
 
   it("Tabs render correctly with default tab-size of 8 when white-space is 'pre-wrap'", async () => {
     const tab = String.fromCodePoint(0x09)
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',

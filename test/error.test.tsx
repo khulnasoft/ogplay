@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Error', () => {
   let fonts
@@ -10,9 +10,9 @@ describe('Error', () => {
   it('should throw if flex missing on div that has children', async () => {
     let error = new Error()
     try {
-      await satori(
+      await ogplay(
         <div>
-          Test <span>satori</span> with space
+          Test <span>ogplay</span> with space
         </div>,
         {
           width: 10,
@@ -29,9 +29,9 @@ describe('Error', () => {
   })
 
   it('should throw if display inline-block on div that has children', async () => {
-    const result = satori(
+    const result = ogplay(
       <div style={{ display: 'inline-block' }}>
-        Test <span>satori</span> with space
+        Test <span>ogplay</span> with space
       </div>,
       {
         width: 10,
@@ -45,7 +45,7 @@ describe('Error', () => {
   })
 
   it('should throw if using invalid values', async () => {
-    const result = satori(
+    const result = ogplay(
       // @ts-expect-error
       <div style={{ position: 'fixed ' }}>Test</div>,
       {
@@ -60,9 +60,9 @@ describe('Error', () => {
   })
 
   it('should not throw if display none on div that has children', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div style={{ display: 'none' }}>
-        Test <span>satori</span> with space
+        Test <span>ogplay</span> with space
       </div>,
       {
         width: 10,
@@ -74,9 +74,9 @@ describe('Error', () => {
   })
 
   it('should not throw if flex missing on span that has children', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <span>
-        Test <span>satori</span> with space
+        Test <span>ogplay</span> with space
       </span>,
       {
         width: 10,
@@ -88,7 +88,7 @@ describe('Error', () => {
   })
 
   it('should not throw if flex missing on div without children', async () => {
-    const svg = await satori(<div></div>, {
+    const svg = await ogplay(<div></div>, {
       width: 10,
       height: 10,
       fonts,
@@ -97,7 +97,7 @@ describe('Error', () => {
   })
 
   it('should not allowed to set negative value to rg-size', async () => {
-    const result = satori(
+    const result = ogplay(
       <div
         style={{
           height: '100%',

@@ -290,8 +290,8 @@ export default async function backgroundImage(
 
     const stops = normalizeStops(length, parsed.colorStops, from)
 
-    const gradientId = `satori_bi${id}`
-    const patternId = `satori_pattern_${id}`
+    const gradientId = `ogplay_bi${id}`
+    const patternId = `ogplay_pattern_${id}`
 
     const defs = buildXMLString(
       'pattern',
@@ -367,9 +367,9 @@ export default async function backgroundImage(
 
     const stops = normalizeStops(width, parsed.colorStops, from)
 
-    const gradientId = `satori_radial_${id}`
-    const patternId = `satori_pattern_${id}`
-    const maskId = `satori_mask_${id}`
+    const gradientId = `ogplay_radial_${id}`
+    const patternId = `ogplay_pattern_${id}`
+    const maskId = `ogplay_mask_${id}`
 
     // We currently only support `farthest-corner`:
     // https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient()#values
@@ -462,11 +462,11 @@ export default async function backgroundImage(
         : dimensionsWithoutFallback[1] || imageHeight
 
     return [
-      `satori_bi${id}`,
+      `ogplay_bi${id}`,
       buildXMLString(
         'pattern',
         {
-          id: `satori_bi${id}`,
+          id: `ogplay_bi${id}`,
           patternContentUnits: 'userSpaceOnUse',
           patternUnits: 'userSpaceOnUse',
           x: offsets[0] + left,

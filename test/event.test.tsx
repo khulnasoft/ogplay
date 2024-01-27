@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Event', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('Event', () => {
 
   it('should trigger the onNodeDetected callback', async () => {
     const nodes = []
-    await satori(
+    await ogplay(
       <div style={{ width: '100%', height: 50, display: 'flex' }}>
         <div>Hello</div>
         <div>World</div>

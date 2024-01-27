@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, loadDynamicAsset, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('word-break', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('word-break', () => {
 
   describe('normal', () => {
     it('should not break word if possible to wrap', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 100,
@@ -32,7 +32,7 @@ describe('word-break', () => {
     })
 
     it('should not break long word', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 100,
@@ -57,7 +57,7 @@ describe('word-break', () => {
 
   it('should support non-breaking space', async () => {
     const text = `She weighs around blah 50\u00a0kg`
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           color: 'red',
@@ -82,7 +82,7 @@ describe('word-break', () => {
 
   describe('break-all', () => {
     it('should always break words eagerly', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 100,
@@ -107,7 +107,7 @@ describe('word-break', () => {
 
   describe('break-word', () => {
     it('should try to wrap words if possible', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 100,
@@ -130,7 +130,7 @@ describe('word-break', () => {
     })
 
     it('should break words if cannot fit into one line', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 100,
@@ -153,7 +153,7 @@ describe('word-break', () => {
     })
 
     it('should wrap first and then break long words', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             width: 100,
@@ -176,7 +176,7 @@ describe('word-break', () => {
     })
 
     it('should not break CJK with word-break: keep-all', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             height: '100%',

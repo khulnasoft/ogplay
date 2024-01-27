@@ -13,11 +13,11 @@ import expand, { SerializedStyle } from './expand.js'
 import { lengthToNumber, parseViewBox, v } from '../utils.js'
 import { resolveImageData } from './image.js'
 
-type SatoriElement = keyof typeof presets
+type OgplayElement = keyof typeof presets
 
 export default async function compute(
   node: YogaNode,
-  type: SatoriElement | string,
+  type: OgplayElement | string,
   inheritedStyle: SerializedStyle,
   definedStyle: Record<string, string | number>,
   props: Record<string, any>

@@ -34,10 +34,10 @@ export interface LayoutContext {
   canLoadAdditionalAssets: boolean
   locale?: Locale
   getTwStyles: (tw: string, style: any) => any
-  onNodeDetected?: (node: SatoriNode) => void
+  onNodeDetected?: (node: OgplayNode) => void
 }
 
-export interface SatoriNode {
+export interface OgplayNode {
   // Layout information.
   left: number
   top: number
@@ -90,7 +90,7 @@ export default async function* layout(
       if (isClass(element.type as Function)) {
         throw new Error('Class component is not supported.')
       }
-      // If it's a custom component, Satori strictly requires it to be pure,
+      // If it's a custom component, Ogplay strictly requires it to be pure,
       // stateless, and not relying on any React APIs such as hooks or suspense.
       // So we can safely evaluate it to render. Otherwise, an error will be
       // thrown by React.
@@ -107,7 +107,7 @@ export default async function* layout(
   const { type, props } = element
   if (props && hasDangerouslySetInnerHTMLProp(props)) {
     throw new Error(
-      'dangerouslySetInnerHTML property is not supported. See documentation for more information https://github.com/vercel/satori#jsx.'
+      'dangerouslySetInnerHTML property is not supported. See documentation for more information https://github.com/khulnasoft/ogplay#jsx.'
     )
   }
   let { style, children, tw, lang: _newLocale = locale } = props || {}
@@ -129,7 +129,7 @@ export default async function* layout(
     style,
     props
   )
-  // Post-process styles to attach inheritable properties for Satori.
+  // Post-process styles to attach inheritable properties for Ogplay.
 
   // If the element is inheriting the parent `transform`, or applying its own.
   // This affects the coordinate system.
@@ -145,12 +145,12 @@ export default async function* layout(
     computedStyle.overflow === 'hidden' ||
     (computedStyle.clipPath && computedStyle.clipPath !== 'none')
   ) {
-    newInheritableStyle._inheritedClipPathId = `satori_cp-${id}`
-    newInheritableStyle._inheritedMaskId = `satori_om-${id}`
+    newInheritableStyle._inheritedClipPathId = `ogplay_cp-${id}`
+    newInheritableStyle._inheritedMaskId = `ogplay_om-${id}`
   }
 
   if (computedStyle.maskImage) {
-    newInheritableStyle._inheritedMaskId = `satori_mi-${id}`
+    newInheritableStyle._inheritedMaskId = `ogplay_mi-${id}`
   }
 
   // If the element has `background-clip: text` set, we need to create a clip
@@ -286,7 +286,7 @@ export default async function* layout(
     depsRenderResult += buildXMLString(
       'clipPath',
       {
-        id: `satori_bct-${id}`,
+        id: `ogplay_bct-${id}`,
         'clip-path': computedStyle._inheritedClipPathId
           ? `url(#${computedStyle._inheritedClipPathId})`
           : undefined,

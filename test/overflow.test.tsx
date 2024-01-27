@@ -1,14 +1,14 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Overflow', () => {
   let fonts
   initFonts((f) => (fonts = f))
 
   it('should not show overflowed text', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: 15,
@@ -29,7 +29,7 @@ describe('Overflow', () => {
   })
 
   it('should work with nested border, border-radius, padding', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100%',
@@ -54,7 +54,7 @@ describe('Overflow', () => {
           }}
         >
           <div style={{ width: '100%', height: '100%', background: 'blue' }}>
-            Satori
+            Ogplay
           </div>
         </div>
       </div>,
@@ -68,7 +68,7 @@ describe('Overflow', () => {
   })
 
   it('should work with ellipsis, nowrap', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           display: 'flex',
@@ -117,7 +117,7 @@ describe('Overflow', () => {
   })
 
   it("should not work when overflow is not 'hidden' and overflow property should not be inherited", async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           display: 'flex',

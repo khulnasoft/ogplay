@@ -1,14 +1,14 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('SVG', () => {
   let fonts
   initFonts((f) => (fonts = f))
 
   it('should render svg nodes', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100%',
@@ -34,7 +34,7 @@ describe('SVG', () => {
   })
 
   it('should render svg attributes correctly', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100%',
@@ -64,7 +64,7 @@ describe('SVG', () => {
   })
 
   it('should render svg size correctly', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100%',
@@ -95,7 +95,7 @@ describe('SVG', () => {
   })
 
   it('should parse viewBox correctly', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100%',
@@ -126,7 +126,7 @@ describe('SVG', () => {
   })
 
   it('should support em in svg size', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100%',
@@ -157,7 +157,7 @@ describe('SVG', () => {
   })
 
   it('should support currentColor for svg fill', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <svg
         width='40'
         height='40'
@@ -179,7 +179,7 @@ describe('SVG', () => {
   })
 
   it('should support currentColor for svg stroke', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <svg
         viewBox='0 0 20 10'
         xmlns='http://www.w3.org/2000/svg'
@@ -193,7 +193,7 @@ describe('SVG', () => {
   })
 
   it('should support currentColor when color is set on parent element', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -223,7 +223,7 @@ describe('SVG', () => {
   })
 
   it('should render svg prefer size props rather than viewBox', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100px',
@@ -246,7 +246,7 @@ describe('SVG', () => {
   })
 
   it('should support currentColor when used on svg nodes', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -277,7 +277,7 @@ describe('SVG', () => {
   })
 
   it('should render svg without viewBox', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           width: '100px',
@@ -297,7 +297,7 @@ describe('SVG', () => {
 
   // TODO wait for @resvg/resvg-js to support mask-type
   it('should respect style on svg node', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',

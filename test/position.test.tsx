@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Position', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('Position', () => {
 
   describe('absolute', () => {
     it('should support absolute position', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             height: '100%',

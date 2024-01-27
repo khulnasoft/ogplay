@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initYogaWasm, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 initYogaWasm()
 
@@ -19,7 +19,7 @@ const items = [
 
 describe('flex gap', () => {
   it('should support gap', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -47,7 +47,7 @@ describe('flex gap', () => {
   })
 
   it('should support rowGap and columnGap', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',

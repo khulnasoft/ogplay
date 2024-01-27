@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('white-space', () => {
   let fonts
@@ -11,7 +11,7 @@ describe('white-space', () => {
     it('should not render extra spaces with `white-space: normal`', async () => {
       const EnSpace = String.fromCodePoint(Number('0x2002'))
 
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'normal',
@@ -34,7 +34,7 @@ describe('white-space', () => {
     })
 
     it('should not render extra line breaks with `white-space: normal`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'normal',
@@ -52,7 +52,7 @@ describe('white-space', () => {
     })
 
     it('should wrap automatically with `white-space: normal`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'normal',
@@ -70,7 +70,7 @@ describe('white-space', () => {
     })
 
     it('Should have line break before fast.!!!!!!!!!!!!!!!!!', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             backgroundColor: '#fff',
@@ -91,7 +91,7 @@ describe('white-space', () => {
 
   describe('pre', () => {
     it('should always preserve extra spaces with `white-space: pre`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre',
@@ -109,7 +109,7 @@ describe('white-space', () => {
     })
 
     it('should always preserve extra line breaks with `white-space: pre`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre',
@@ -128,7 +128,7 @@ describe('white-space', () => {
     })
 
     it('should render line breaks correctly without separators', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre',
@@ -148,7 +148,7 @@ describe('white-space', () => {
     })
 
     it('should not wrap with `white-space: pre`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre',
@@ -169,7 +169,7 @@ describe('white-space', () => {
 
   describe('with `white-space: pre-wrap`', () => {
     it('should always preserve extra spaces with `white-space: pre-wrap`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre-wrap',
@@ -187,7 +187,7 @@ describe('white-space', () => {
     })
 
     it('should always preserve extra line breaks with `white-space: pre-wrap`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre-wrap',
@@ -206,7 +206,7 @@ describe('white-space', () => {
     })
 
     it('should automatically wrap with `white-space: pre-wrap`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre-wrap',
@@ -227,7 +227,7 @@ describe('white-space', () => {
 
   describe('with `white-space: pre-line`', () => {
     it('should always collapse spaces and preserve line breaks with `white-space: pre-line`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre-line',
@@ -248,7 +248,7 @@ describe('white-space', () => {
 
   describe('with `white-space: nowrap`', () => {
     it('should not wrap with `white-space: nowrap` and swallow extra spaces', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'nowrap',
@@ -269,7 +269,7 @@ describe('white-space', () => {
 
   describe('with `\\n` in content', () => {
     it('should render `\\n` as a whitespace', async () => {
-      const svg = await satori(<div style={{}}>{`hello\nworld`}</div>, {
+      const svg = await ogplay(<div style={{}}>{`hello\nworld`}</div>, {
         width: 100,
         height: 100,
         fonts,
@@ -278,7 +278,7 @@ describe('white-space', () => {
     })
 
     it('should render `\\n` as a line break with `pre`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre',
@@ -296,7 +296,7 @@ describe('white-space', () => {
     })
 
     it('should render consecutive line breaks with `pre`', async () => {
-      const svg = await satori(
+      const svg = await ogplay(
         <div
           style={{
             whiteSpace: 'pre',

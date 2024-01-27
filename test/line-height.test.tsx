@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('line-height', () => {
   let fonts
@@ -9,7 +9,7 @@ describe('line-height', () => {
   it('should work correctly', async () => {
     const svgs = await Promise.all(
       [1, '1'].map((lineHeight) =>
-        satori(
+        ogplay(
           <div
             style={{
               margin: 0,

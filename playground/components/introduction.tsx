@@ -14,7 +14,7 @@ export default function Introduction({ onClose }: IProps) {
         <code>@vercel/og</code>. To learn more about how to add it to your
         project, please read{' '}
         <a
-          href='https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation'
+          href='https://khulnasoft.com/docs/concepts/functions/edge-functions/og-image-generation'
           target='_blank'
           rel='noreferrer'
         >
@@ -22,7 +22,7 @@ export default function Introduction({ onClose }: IProps) {
         </a>{' '}
         or the{' '}
         <a
-          href='https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images'
+          href='https://khulnasoft.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images'
           target='_blank'
           rel='noreferrer'
         >

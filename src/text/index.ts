@@ -748,7 +748,7 @@ export default async function* buildTextNodes(
         ? filter +
           buildXMLString(
             'g',
-            { filter: `url(#satori_s-${id})` },
+            { filter: `url(#ogplay_s-${id})` },
             p + decorationShape
           )
         : p + decorationShape) + extra

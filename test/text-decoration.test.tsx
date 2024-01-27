@@ -1,14 +1,14 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, loadDynamicAsset, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('Text Decoration', () => {
   let fonts
   initFonts((f) => (fonts = f))
 
   it('Should work correctly when `text-decoration-line: line-through` and `text-align: right`', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -48,7 +48,7 @@ describe('Text Decoration', () => {
   })
 
   it('Should work correctly when `text-decoration-line: underline` and `text-align: right`', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -88,7 +88,7 @@ describe('Text Decoration', () => {
   })
 
   it('Should work correctly when `text-decoration-style: dotted`', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -121,7 +121,7 @@ describe('Text Decoration', () => {
   })
 
   it('Should work correctly when `text-decoration-style: dashed`', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',

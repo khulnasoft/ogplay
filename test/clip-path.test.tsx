@@ -1,7 +1,7 @@
 import { it, describe, expect } from 'vitest'
 
 import { initFonts, toImage } from './utils.js'
-import satori from '../src/index.js'
+import ogplay from '../src/index.js'
 
 describe('clipPath', () => {
   let fonts
@@ -18,7 +18,7 @@ describe('clipPath', () => {
         'inset(10px 20px)',
         'inset(0.5rem round 20% 1em 1rem 2px)',
       ].map((clipPath) =>
-        satori(
+        ogplay(
           <div
             style={{
               height: '100%',
@@ -48,7 +48,7 @@ describe('clipPath', () => {
   })
 
   it('should make clip-path compatible with overflow', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -77,7 +77,7 @@ describe('clipPath', () => {
   })
 
   it('should respect the position value', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
@@ -105,7 +105,7 @@ describe('clipPath', () => {
   })
 
   it('should respect left and top', async () => {
-    const svg = await satori(
+    const svg = await ogplay(
       <div
         style={{
           height: '100%',
