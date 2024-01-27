@@ -20,21 +20,15 @@ export default function App({ Component, pageProps }: AppProps) {
           content='Generate Open Graph images with Vercel’s Edge Function.'
         />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://og-playground.vercel.app/' />
+        <meta property='og:url' content='https://ogplay.vercel.app/' />
         <meta property='og:title' content='Vercel OG Image Playground' />
         <meta
           property='og:description'
           content='Generate Open Graph images with Vercel’s Edge Function.'
         />
-        <meta
-          property='og:image'
-          content='https://og-playground.vercel.app/og.png'
-        />
+        <meta property='og:image' content='https://ogplay.vercel.app/og.png' />
         <meta property='twitter:card' content='summary_large_image' />
-        <meta
-          property='twitter:url'
-          content='https://og-playground.vercel.app/'
-        />
+        <meta property='twitter:url' content='https://ogplay.vercel.app/' />
         <meta property='twitter:title' content='Vercel OG Image Playground' />
         <meta
           property='twitter:description'
@@ -42,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property='twitter:image'
-          content='https://og-playground.vercel.app/og.png'
+          content='https://ogplay.vercel.app/og.png'
         />
         <link
           rel='preload'

@@ -15,7 +15,7 @@ How did you expect Ogplay to behave here?
 
 ## Reproduction
 
-Create a shareable reproduction link for the issue using https://og-playground.vercel.app.
+Create a shareable reproduction link for the issue using https://ogplay.vercel.app.
 
 ## Additional Context
 
