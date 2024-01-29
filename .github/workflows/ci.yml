@@ -20,7 +20,7 @@ jobs:
         node: [ 18 ]
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Use pnpm
       run: corepack enable pnpm && pnpm --version
     - name: Use Node.js ${{ matrix.node }}
@@ -44,7 +44,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Use pnpm
         run: corepack enable pnpm && pnpm --version
       - name: Use Node.js ${{ matrix.node }}
